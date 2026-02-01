@@ -1,21 +1,12 @@
 <html>
     <head>
         <link rel="stylesheet" href="styles.css">
-        <script type="text/javascript" src="index.js"></script>
     </head>
-    <body>
-        <div class="paper pink">Greetings comrade, today you receive a promotion for the newspaper, and must take the job, unlike [redacted] who failed to serve. Lie to the public, keep the peace. Failure to comply results in death. Your shift starts in 2 minutes, don't be late or we'll kill you.</div>
-        <div class="paper newspaper">
-            Click the <span class="truth" id="handwritten-text" data-index="0">handwritten text</span> to decide what goes into the stories you publish. Lies are written in <span style="color: red">red</span>.
+    <body class="main-menu">
+        <div class="paper main-menu-paper">
+            Created by Charles Oliner and Colin Barrion
             <br/>
-            <button onclick="start()">Start</button>
+            <a href="game"><button>Play</button></a>
         </div>
-        <script>
-            const handwrittenText = document.getElementById("handwritten-text");
-            handwrittenText.onclick = () => rotate(handwrittenText, [
-                ["a", "handwritten text"],
-                ["b", "text that looks handwritten"]
-            ]);
-        </script>
     <body>
 <html>

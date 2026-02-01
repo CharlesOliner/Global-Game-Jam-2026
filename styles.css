@@ -3,9 +3,23 @@
     src: url('./RoyalBrand-Regular.otf');
 }
 
-html, body {margin: 0; height: 100%; overflow: hidden}
+html, body {
+    margin: 0;
+    height: 100%;
+    overflow: hidden
+}
 
-body {
+.main-menu {
+    background-image: url("./conceal-and-reveal.png");
+}
+
+.main-menu-paper {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+}
+
+.game {
     background-image: url("./red-mahogany.jpg");
     display: flex;
     flex-direction: column;
@@ -27,17 +41,32 @@ body {
 
 .paper.pink {
     background-image: url("./pink-paper.png");
-    text-align: center;
+
+}
+
+.paper.yellow {
+    background-image: url("./yellow-paper.png");
+}
+
+.column {
+    display: flex;
+    flex-direction: column;
+}
+
+.article-row {
+    display: flex;
+    flex-direction: row;
+    flex-grow: 1;
+}
+
+.button-row {
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
-.paper.yellow {
-    background-image: url("./yellow-paper.png");
+.column.centered {
     text-align: center;
-    display: flex;
-    flex-direction: column;
     align-items: center;
 }
 

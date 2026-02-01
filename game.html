@@ -1,0 +1,61 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="styles.css">
+    </head>
+    <body class="game">
+        <div id="task" class="paper pink" style="display:none"></div>
+        <div id="newspaper" class="paper newspaper column">
+            <div id="article" class="article-row">
+                <div id="article-text"></div>
+                <img id="article-image"/>
+            </div>
+            <div id="newspaper-button-row" class="button-row" style="display:none">
+                <button id="newspaper-button"></button>
+            </div>
+            <!--Click the <span class="truth" id="handwritten-text" data-index="0">handwritten text</span> to decide what goes into the stories you publish. Lies are written in <span style="color: red">red</span>.
+            <br/>
+            <button onclick="start()">Start</button>-->
+        </div>
+        <div id="feedback" class="paper yellow centered" style="display:none">
+            <div id="feedback-text"></div>
+            <div id="next-button-row" class="button-row">
+                <button id="next-button" onclick="next()">Next</button>
+            </div>
+        </div>
+        <table id="stats" class="paper yellow" style="display:none">
+            <tr>
+                <th>Government approval</th>
+                <td id="government-approval-change"></td>
+                <td id="government-approval"></td>
+            </tr>
+            <tr>
+                <th>Public approval</th>
+                <td id="public-approval-change"></td>
+                <td id="public-approval"></td>
+            </tr>
+            <tr>
+                <th>Economy</th>
+                <td id="economy-change"></td>
+                <td id="economy"></td>
+            </tr>
+            <tr>
+                <th>Health</th>
+                <td id="health-change"></td>
+                <td id="health"></td>
+            </tr>
+        </table>
+        <!--<script>
+            const handwrittenText = document.getElementById("handwritten-text");
+            handwrittenText.onclick = () => rotate(handwrittenText, [
+                ["a", "handwritten text"],
+                ["b", "text that looks handwritten"]
+            ]);
+        </script>-->
+        <script type="text/javascript" src="game.js"></script>
+        <script type="text/javascript" src="intro.js"></script>
+        <script type="text/javascript" src="common.js"></script>
+        <script>
+            start();
+        </script>
+    <body>
+<html>

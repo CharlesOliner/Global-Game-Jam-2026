@@ -1,0 +1,15 @@
+{
+    "task": "Greetings comrade, today you receive a promotion for the newspaper, and must take the job, unlike [redacted] who failed to serve. Lie to the public, keep the peace. Failure to comply results in death. Your shift starts in 2 minutes, don't be late or we'll kill you.",
+    "article": [
+        "Click the ",
+        {
+            "id": "a",
+            "type": "CHOICE",
+            "options": {
+                "handwritten-text": "handwritten text",
+                "text-that-looks-handwritten": "text that looks handwritten"
+            }
+        },
+        " to decide what goes into the stories you publish. Lies are written in red."
+    ]
+}

@@ -33,7 +33,7 @@
     ],
     "outcomes": {
         "agressor: guard & cause: revenge": {
-            "message": "The people figured out you were framing the guard. Isn't Forsher the one who would want revenge?",
+            "message": "The people thought you were framing the guard. Isn't Forsher the one who would want revenge?",
             "statChanges": {
                 "governmentApproval": 10,
                 "publicApproval": -25
