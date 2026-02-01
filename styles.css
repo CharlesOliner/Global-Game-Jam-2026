@@ -27,10 +27,18 @@ body {
 
 .paper.pink {
     background-image: url("./pink-paper.png");
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .paper.yellow {
     background-image: url("./yellow-paper.png");
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .newspaper {
