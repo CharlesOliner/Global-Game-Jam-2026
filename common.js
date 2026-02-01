@@ -1,6 +1,7 @@
 const taskElement = document.getElementById("task");
 const newspaperElement = document.getElementById("newspaper");
 const articleTextElement = document.getElementById("article-text");
+const articleImageElement = document.getElementById("article-image");
 const newspaperButtonElement = document.getElementById("newspaper-button");
 const newspaperButtonRowElement = document.getElementById("newspaper-button-row");
 const feedbackElement = document.getElementById("feedback");

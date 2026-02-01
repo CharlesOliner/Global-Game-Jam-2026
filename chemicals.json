@@ -17,7 +17,7 @@
             "type": "CHOICE",
             "options": {
                 "just-water": "has assured us that the liquid that was dumped into the lake is just water.",
-                "toxic-chemicals": "privately told our government contacts that the chemical that was dumped into the lake was indeed a carcinogenic chemical unknown to the general public."
+                "toxic-chemicals": "privately told our government contacts that the chemical that was dumped into the lake was radioactive waste."
             }
         },
         " The town has been closed to the public because ",
@@ -40,7 +40,7 @@
             }
         },
         "identity: petrochemical-company & contents: toxic-chemicals": {
-            "message": "This is a bad look for the company",
+            "message": "This is a bad look for the company.",
             "statChanges": {
                 "publicApproval": 10,
                 "governmentApproval": -25,
@@ -62,5 +62,8 @@
                 "economy": 25
             }
         }
+    },
+    "images": {
+        "contents: toxic-chemicals": "/radioactive-waste.png"
     }
 }

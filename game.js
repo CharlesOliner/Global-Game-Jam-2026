@@ -61,6 +61,8 @@ async function next() {
 
 function displayArticle() {
 
+    articleImageElement.style.display = "none";
+
     taskElement.style.display = articleData.task ? "" : "none";
     taskElement.innerText = articleData.task;
 
@@ -156,6 +158,27 @@ function updateStats(statChanges){
     }
 }
 
+function evaluateCondition(condition){
+    let conditionMet = true;
+    for (let subCondition of condition.split("&")){
+        const subConditionParts = subCondition.split(":");
+
+        if (subConditionParts.length != 2) {
+            throw new Error(`subConditionParts.length was not 2! subConditionParts: ${subConditionParts}`);
+        }
+
+        choiceId = subConditionParts[0].trim();
+        optionIds = subConditionParts[1].split("|").map(optionId => optionId.trim());
+
+        const subConditionMet = optionIds.includes(document.getElementById(choiceId).dataset.value);
+
+        if (!subConditionMet) {
+            conditionMet = false;
+        }
+    }
+    return conditionMet;
+}
+
 function publish() {
 
     feedbackElement.style.display = "";
@@ -163,28 +186,19 @@ function publish() {
     let outcomes = [];
 
     for (let [condition, outcome] of Object.entries(articleData.outcomes)) {
-
-        let conditionMet = true;
-
-        for (let subCondition of condition.split("&")){
-            const subConditionParts = subCondition.split(":");
-
-            if (subConditionParts.length != 2) {
-                throw new Error(`subConditionParts.length was not 2! subConditionParts: ${subConditionParts}`);
-            }
-
-            choiceId = subConditionParts[0].trim();
-            optionIds = subConditionParts[1].split("|").map(optionId => optionId.trim());
-
-            const subConditionMet = optionIds.includes(document.getElementById(choiceId).dataset.value);
-
-            if (!subConditionMet) {
-                conditionMet = false;
-            }
-        }
-
-        if (conditionMet) {
+        if (evaluateCondition(condition)) {
             outcomes.push(outcome);
+        }
+    }
+
+    if (articleData.images) {
+        for (let [condition, url] of Object.entries(articleData.images)) {
+            if (evaluateCondition(condition)) {
+                console.log(condition, url);
+                articleImageElement.src = url;
+                articleImageElement.style.display = "";
+                break;
+            }
         }
     }
 

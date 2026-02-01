@@ -73,5 +73,9 @@
                 "publicApproval": 10
             }
         }
+    },
+    "images": {
+        "response: execution": "/guillotine.png",
+        "response: trial": "/mugshot.png"
     }
 }
