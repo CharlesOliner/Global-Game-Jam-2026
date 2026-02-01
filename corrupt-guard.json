@@ -1,0 +1,77 @@
+{
+    "task": "Government-assigned task: Pin the blame on Forsher.",
+    "article" : [
+        "Yesterday, a high ranking royal guard ",
+        {
+            "id": "agressor",
+            "type": "CHOICE",
+            "options": {
+                "guard": "attacked",
+                "influential-man": "(Lie) was attacked by"
+            }
+        },
+        " Dr. Forsher in his lab. Forsher is known for developing medication. ",
+        {
+            "id": "cause",
+            "type": "CHOICE",
+            "options": {
+                "revenge": "(Lie) Clearly, this is an act of revenge against the government for inducing cruel forced labor for Forsher to develop medications.",
+                "alcoholism": "(Lie) This is clear proof of the evils that can result from drinking alcohol.",
+                "dissillusionment": "Clearly, he was showing off. He had aspirations of joining the military."
+            }
+        },
+        " ",
+        {
+            "id": "response",
+            "type": "CHOICE",
+            "options": {
+                "trial": "Forsher is set to be tried in a court of law later this week.",
+                "execution": "(Lie) Forsher will be executed in private without trial.",
+                "nothing": "(Lie) The government has chosen not to take action in this case."
+            }
+        }
+    ],
+    "outcomes": {
+        "agressor: guard & cause: revenge": {
+            "message": "The people figured out you were framing the guard. Isn't Forsher the one who would want revenge?",
+            "statChanges": {
+                "governmentApproval": 10,
+                "publicApproval": -25
+            }
+        },
+        "agressor: guard & cause: dissillusionment | alcoholism": {
+            "message": "Th government is concerned about your ability to follow basic instructions.",
+            "statChanges": {
+                "governmentApproval": -25,
+                "publicApproval": 10
+            }
+        },
+        "agressor: guard & cause: dissillusionment | alcoholism & response: trial | execution": {
+            "message": "The people saw that the guard was guilty and that Forsher would be punished for it.",
+            "statChanges": {
+                "governmentApproval": -15,
+                "publicApproval": 20
+            }
+        },
+        "cause: alcoholism": {
+            "message": "Alcohol sales have dropped.",
+            "statChanges": {
+                "economy": -10
+            }
+        },
+        "response: nothing": {
+            "message": "The people are angry that justice wasn't served.",
+            "statChanges": {
+                "governmentApproval": -15,
+                "publicApproval": 10
+            }
+        },
+        "agressor: influential-man & response: execution": {
+            "message": "The people are angry that Forsher didn't get a fair trial.",
+            "statChanges": {
+                "governmentApproval": -25,
+                "publicApproval": 10
+            }
+        }
+    }
+}

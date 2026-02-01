@@ -1,0 +1,66 @@
+{
+    "task": "Government-assigned task: Get the petrochemical company off the hook.",
+    "article": [
+        "A few days ago, several witnesses reported seeing the local petrochemical company dumping a liquid into (lake name). This lake is acts as a water supply for (town name).",
+        {
+            "id": "identity",
+            "type": "CHOICE",
+            "options": {
+                "petrochemical-company": "The petrochemical company did indeed dump a liquid into the lake.",
+                "foreign-agents": "(Lie) Foreign agents posing as employees of the petrochemical company dumped the liquid into the lake.",
+                "nobody": "(Lie) Nobody dumped anything into the lake."
+            }
+        },
+        " The petrochemical company ",
+        {
+            "id": "contents",
+            "type": "CHOICE",
+            "options": {
+                "just-water": "has assured us that the liquid that was dumped into the lake is just water.",
+                "toxic-chemicals": "privately told our government contacts that the chemical that was dumped into the lake was indeed a carcinogenic chemical unknown to the general public."
+            }
+        },
+        " The town has been closed to the public because ",
+        {
+            "id": "reason",
+            "type": "CHOICE",
+            "options": {
+                "illness": "the government doesn't want anyone else to get sick.",
+                "abandoned": "it was abandoned. Everyone there was scared to drink the water."
+            }
+        }
+    ],
+    "outcomes": {
+        "identity: foreign-agents | nobody": {
+            "message": "Your readers saw through it. How would the petrochemical company know what was in the water if it didn't come from them?",
+            "statChanges": {
+                "publicApproval": -25,
+                "governmentApproval": -25,
+                "economy": -15
+            }
+        },
+        "identity: petrochemical-company & contents: toxic-chemicals": {
+            "message": "This is a bad look for the company",
+            "statChanges": {
+                "publicApproval": 10,
+                "governmentApproval": -25,
+                "economy": -15
+            }
+        },
+        "identity: petrochemical-company & contents: just-water & reason: illness": {
+            "message": "Your readers reasonably concluded that people might be getting sick because it wasn't really water.",
+            "statChanges": {
+                "publicApproval": -5,
+                "governmentApproval": -15,
+                "economy": -5
+            }
+        },
+        "identity: petrochemical-company & contents: just-water & reason: abandoned": {
+            "message": "The government is happy with your work.",
+            "statChanges": {
+                "governmentApproval": 15,
+                "economy": 25
+            }
+        }
+    }
+}

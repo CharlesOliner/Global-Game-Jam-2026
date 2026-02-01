@@ -1,0 +1,96 @@
+{
+    "task": "Government-assigned task: Generate public support for the violent takeover of (country).",
+    "article": [
+        "A few days ago, the government intercepted a telegram from an outside nation. The message was asking for help and supplies. We believe this message to be ",
+        {
+            "id": "telegram",
+            "type": "CHOICE",
+            "options": {
+                "legitimate": "(True) legitimate, and describes a nation soon to be at war.",
+                "foreign-agents": "(Lie) foreign agents trying to bait us into attacking a country with secret alliances that would wipe us off of the map.",
+                "illegitimate": "(Lie) a lie told by our own government to gain our support."
+            }
+        },
+        " The telegram proves that ",
+        {
+            "id": "proves",
+            "type": "CHOICE",
+            "options": {
+                "bush-did-9/11": "(Lie) foreign countries aren't real.",
+                "hopeless": "(Lie) our only hope of survival is to flee the country.",
+                "nanking": "the country intends to attack our wonderful city, plunder every last home, and to slaughter the children."
+            }
+        },
+        " The government encourages citizens to ",
+        {
+            "id": "action",
+            "type": "CHOICE",
+            "options": {
+                "enlist": "enlist in the military.",
+                "surrender": "(Lie) surrender peacefully.",
+                "twitter": "(Lie) stay vigilant for people botting on twitter."
+            }
+        }
+    ],
+    "outcomes": {
+        "telegram: legitimate": {
+            "message": "The government appreciated your cooperation.",
+            "statChanges": {
+                "governmentApproval": 20
+            }
+        },
+        "telegram: foreign-agents": {
+            "message": "The government did not appreciate that you told everyone the war was a trap.",
+            "statChanges": {
+                "governmentApproval": -20
+            }
+        },
+        "telegram: illegitimate": {
+            "message": "Outright accusations of this sort will not be tolerated.",
+            "statChanges": {
+                "governmentApproval": -100
+            }
+        },
+        "proves: bush-did-9/11": {
+            "message": "Your readers are pretty sure foreign countries are real.",
+            "statChanges": {
+                "publicApproval": -25
+            }
+        },
+        "proves: hopeless": {
+            "message": "Attempts to weaken the government will not be tolerated.",
+            "statChanges": {
+                "governmentApproval": -100
+            }
+        },
+        "proves: nanking": {
+            "message": "The government appreciated that you showed how important this war is.",
+            "statChanges": {
+                "governmentApproval": 20,
+                "economy": -5,
+                "health": -10
+            }
+        },
+        "action: surrender": {
+            "message": "Treason will not be tolerated.",
+            "statChanges": {
+                "governmentApproval": -100
+            }
+        },
+        "action: twitter": {
+            "message": "Twitter? Militaries are still using telegrams. What year do you think it is?",
+            "statChanges": {
+                "economy": -5,
+                "health": -5,
+                "publicApproval": -5,
+                "governmentApproval": -5
+            }
+        },
+        "action: enlist": {
+            "message": "The government appreciated that you included something about enlisting.",
+            "statChanges": {
+                "governmentApproval": 20
+            }
+        }
+    }
+}

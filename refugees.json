@@ -1,0 +1,95 @@
+{
+    "task": "Government-assigned task: Generate public support for turning away the refugees.",
+    "article" : [
+        "As of late locals have noticed ",
+        {
+            "id": "description-of-refugees",
+            "type": "CHOICE",
+            "options": {
+                "nobody": "(Lie) nobody new",
+                "negative": "(Lie) worthless deliquents in shoddy clothing",
+                "positive": "hardworking people dreaming of a better life"
+            }
+        },
+        " entering the city. A reporter from the outer district says that ",
+        {
+            "id": "intention",
+            "type": "CHOICE",
+            "options": {
+                "seeking-refuge": "their intention is to seek refuge from an outside war, they claim to have tracked long way and need temporary housing before being on their way.",
+                "nothing": "(Lie) they are here for no reason whatsoever and are doing nothing.",
+                "infection": "(Lie) he was instantly killed by a mysterious illness the moment he got close."
+            }
+        },
+        " In other news, ",
+        {
+            "id": "other-news",
+            "type": "CHOICE",
+            "options": {
+                "healthy": "(Lie) the outer district is very healthy, and will stay strong for a 100 more years.",
+                "hats": "(Lie) upside down hats are a popular trend to keep mental health.",
+                "illness": "cases of a new mysterious illness have been reported in the outer district."
+            }
+        }
+    ],
+    "outcomes": {
+        "intention: infection & other-news: illness": {
+            "message": "The people are grateful for warning them about... I won't repeat what they said.",
+            "statChanges": {
+                "governmentApproval": 10,
+                "publicApproval": 25
+            }
+        },
+        "intention: seeking-refuge & other-news: illness": {
+            "message": "The people are grateful for warning them about the illness, but the government thinks you forgot about something.",
+            "statChanges": {
+                "governmentApproval": -10,
+                "publicApproval": 15
+            }
+        },
+        "description-of-refugees: positive": {
+            "message": "The government is concerned about your ability to follow basic instructions.",
+            "statChanges": {
+                "governmentApproval": -15,
+                "publicApproval": 10
+            }
+        },
+        "description-of-refugees: nobody & intention: nothing": {
+            "message": "The government is concerned that you're not taking your job seriously.",
+            "statChanges": {
+                "governmentApproval": -5,
+                "publicApproval": -2
+            }
+        },
+        "description-of-refugees: nobody & intention: seeking-refuge": {
+            "message": "The people are smart enough to know that if there are no new people, they can't seek refuge.",
+            "statChanges": {
+                "publicApproval": -10
+            }
+        },
+        "description-of-refugees: negative | positive & intention: nothing": {
+            "message": "The people are confused.",
+            "statChanges": {
+                "publicApproval": -5
+            }
+        },
+        "intention: infection": {
+            "message": "Fear isn't great for the economy.",
+            "statChanges": {
+                "economy": -5
+            }
+        },
+        "other-news: illness": {
+            "message": "People buy less stuff when there's an illness spreading around.",
+            "statChanges": {
+                "economy": -20
+            }
+        },
+        "other-news: healthy | hats": {
+            "message": "You didn't warn anyone about the mysterious illness.",
+            "statChanges": {
+                "health": -25
+            }
+        }
+    }
+}

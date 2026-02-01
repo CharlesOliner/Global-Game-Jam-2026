@@ -1,0 +1,93 @@
+@font-face {
+    font-family: 'Royal Brand';
+    src: url('./RoyalBrand-Regular.otf');
+}
+
+html, body {margin: 0; height: 100%; overflow: hidden}
+
+body {
+    background-image: url("./red-mahogany.jpg");
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.paper {
+    font-size: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+    padding: 4px;
+    margin-top: 8px;
+    margin-bottom: 8px;
+    margin-left: 8px;
+    margin-right: 8px;
+    font-family: serif;
+    line-height: 24px;
+    background-image: url("./paper.png");
+}
+
+.paper.pink {
+    background-image: url("./pink-paper.png");
+}
+
+.paper.yellow {
+    background-image: url("./yellow-paper.png");
+}
+
+.newspaper {
+    overflow-x: hidden;
+    overflow-y: scroll;
+    flex-grow: 1;
+    text-align: left;
+}
+
+.lie {
+    color: red;
+    cursor: pointer;
+    font-family: "Royal Brand";
+}
+
+.truth {
+    cursor: pointer;
+    font-family: "Royal Brand";
+}
+
+.lie:hover {
+  text-decoration-line: underline;
+  text-decoration-thickness: 2px;
+}
+
+.truth:hover {
+  text-decoration-line: underline;
+  text-decoration-thickness: 2px;
+}
+
+button {
+    background: red;
+    overflow: hidden;
+    border: none;
+    cursor: pointer;
+    border-radius: 4px;
+    color: white;
+    padding-left: 8;
+    padding-right: 8;
+    padding-top: 4;
+    padding-bottom: 4;
+    font-size: 18px;
+    font-family: serif;
+}
+
+button:hover {
+    background-color: #ff5353;
+}
+
+table {
+    width: 360px;
+}
+
+th {
+    text-align: left;
+}
+
+td {
+    text-align: right;
+}

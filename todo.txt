@@ -1,0 +1,2 @@
+end game when the final article is finished or when anything hits 0%.
+Center "Next" button
