@@ -7,6 +7,7 @@ const levels = [
     "chemicals",
     "war",
     "refugees",
+    "riot",
     "victory"
 ];
 
@@ -206,7 +207,6 @@ function handleOutcomes(outcomes) {
     for (let elem of [...document.getElementsByClassName("choice")]) {
         elem.classList.remove("choice");
         elem.onclick = null;
-        elem.innerText = elem.innerText.replace("(Lie)",'').replace("(Truth)",'').trim();
     }
 
     let statChanges = {};

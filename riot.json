@@ -1,0 +1,88 @@
+{
+    "task": "End the violent riots in the middle district. (The red text has been disabled)",
+    "article": [
+        "This is an open letter to the ",
+        {
+            "id": "rioters",
+            "type": "CHOICE",
+            "options": {
+                "mindless-animals": "mindless animals pillaging",
+                "brave-warriors": "brave warriors engaged in honorable combat",
+                "rebels": "rebels protesting"
+            }
+        },
+        " in the middle district. We have heard your pleas for greater transparency from the government. But, ",
+        {
+            "id": "government",
+            "type": "CHOICE",
+            "options": {
+                "censors": "the government is only trying to censor the treasonous lies told by our true enemies.",
+                "foe": "the government is your true enemy, not the private residences you are attacking.",
+                "liars": "the lies you were told were necessary to protect you."
+            }
+        },
+        " One only needs to look at the ",
+        {
+            "id": "evidence",
+            "type": "CHOICE",
+            "options": {
+                "chemicals": "incident of the chemicals that were dumped into the lake",
+                "guard": "incident of the fight between a guard and a scientist",
+                "war": "imminent war",
+                "refugees": "refugees entering our city"
+            }
+        },
+        " to see what I am talking about. It would be best if you all ",
+        {
+            "id": "action",
+            "type": "CHOICE",
+            "options": {
+                "go-home": "went home.",
+                "surrender": "turned yourselves in.",
+                "switched-targets": "switched targets."
+            }
+        }
+    ],
+    "outcomes": {
+        "rioters: mindless-animals": {
+            "message": "The people didn't like being called \"mindless animals\".",
+            "statChanges": {
+                "governmentApproval": 50,
+                "publicApproval": -35
+            }
+        },
+        "rioters: brave-warriors": {
+            "message": "The government didn't like how how described the rioters.",
+            "statChanges": {
+                "governmentApproval": -50,
+                "publicApproval": 35
+            }
+        },
+        "government: foe": {
+            "message": "I hope you didn't expect to get away with calling the government the enemy.",
+            "statChanges": {
+                "governmentApproval": -999999,
+                "publicApproval": 35
+            }
+        },
+        "government: liars": {
+            "message": "The government didn't like that you called them liars.",
+            "statChanges": {
+                "governmentApproval": -50,
+                "publicApproval": -15
+            }
+        },
+        "government: foe & action: surrender": {
+            "message": "You called the government a foe, and then told the people to turn themselves in?",
+            "statChanges": {
+                "publicApproval": -25
+            }
+        },
+        "government: censors": {
+            "message": "The government approves of how you portrayed censorship.",
+            "statChanges": {
+                "governmentApproval": 25
+            }
+        }
+    }
+}
