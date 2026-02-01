@@ -11,6 +11,7 @@ html, body {
 
 .main-menu {
     background-image: url("conceal-and-reveal.png");
+    background-size: cover;
 }
 
 .main-menu-paper {
