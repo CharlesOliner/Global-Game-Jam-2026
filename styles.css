@@ -115,7 +115,6 @@ button {
     overflow: hidden;
     border: none;
     cursor: pointer;
-    border-radius: 4px;
     color: white;
     padding-left: 8;
     padding-right: 8;
@@ -127,6 +126,10 @@ button {
 
 button:hover {
     background-color: #ff5353;
+}
+
+button:not(:active) {
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
 }
 
 table {
