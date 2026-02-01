@@ -1,6 +1,6 @@
 @font-face {
     font-family: 'Royal Brand';
-    src: url('./RoyalBrand-Regular.otf');
+    src: url('/RoyalBrand-Regular.otf');
 }
 
 html, body {
@@ -10,7 +10,7 @@ html, body {
 }
 
 .main-menu {
-    background-image: url("./conceal-and-reveal.png");
+    background-image: url("/conceal-and-reveal.png");
 }
 
 .main-menu-paper {
@@ -20,7 +20,7 @@ html, body {
 }
 
 .game {
-    background-image: url("./red-mahogany.jpg");
+    background-image: url("/red-mahogany.jpg");
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -36,16 +36,16 @@ html, body {
     margin-right: 8px;
     font-family: serif;
     line-height: 24px;
-    background-image: url("./paper.png");
+    background-image: url("/paper.png");
 }
 
 .paper.pink {
-    background-image: url("./pink-paper.png");
+    background-image: url("/pink-paper.png");
 
 }
 
 .paper.yellow {
-    background-image: url("./yellow-paper.png");
+    background-image: url("/yellow-paper.png");
 }
 
 .column {

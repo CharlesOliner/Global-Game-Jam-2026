@@ -6,7 +6,8 @@ const levels = [
     "corrupt-guard",
     "chemicals",
     "war",
-    "refugees"
+    "refugees",
+    "victory"
 ];
 
 let audio;
@@ -31,20 +32,24 @@ async function start() {
 
 async function next() {
 
-    taskElement.style.display = "none";
-    feedbackElement.style.display = "none";
-    newspaperButtonRowElement.style.display = "none";
-    statsElement.style.display = "none";
-
     levelIndex++;
-    clear(articleTextElement);
-    articleTextElement.innerText = "Loading...";
+
+    const levelName = (
+        stats.governmentApproval == 0
+        || stats.publicApproval == 0
+        || stats.economy == 0
+        || stats.health == 0
+    ) 
+        ? "/game-over.json"
+        : `/${levels[levelIndex]}.json`;
+
     const response = await fetch(
-      `./${levels[levelIndex]}.json`,
+      levelName,
       {
         method: 'GET',
       },
     );
+
     if (!response.ok) {
         document.body.innerText = "There was an error loading data.";
         throw new Error(`Error! status: ${response.status}`);
@@ -77,23 +82,34 @@ function displayArticle() {
 
     newspaperButtonRowElement.style.display = "";
     feedbackElement.style.display = "none";
-    if (articleData.outcomes) {
-        updateStats({});
-        statsElement.style.display = "";
-        newspaperButtonElement.innerText = "Publish";
-        newspaperButtonElement.onclick = publish;
-    }
-    else {
-        statsElement.style.display = "none";
-        newspaperButtonElement.innerText = "Next";
-        newspaperButtonElement.onclick = () => {
-            if (!audio) {
-                audio = new Audio('music.mp3');
-                audio.loop = true;
+    switch (articleData.action) {
+        case "NEXT":
+            statsElement.style.display = "none";
+            newspaperButtonElement.innerText = "Next";
+            newspaperButtonElement.onclick = () => {
+                if (!audio) {
+                    audio = new Audio('music.mp3');
+                    audio.loop = true;
+                }
                 audio.play();
-            }
-            next();
-        };
+                next();
+            };
+            break;
+        case "RESTART":
+            audio?.pause();
+            updateStats({});
+            statsElement.style.display = "";
+            newspaperButtonElement.innerText = "Restart";
+            newspaperButtonElement.onclick = () => {
+                navigation.navigate("/");
+            };
+            break;
+        default:
+            updateStats({});
+            statsElement.style.display = "";
+            newspaperButtonElement.innerText = "Publish";
+            newspaperButtonElement.onclick = publish;
+            break;
     }
 }
 

@@ -1,0 +1,7 @@
+{
+    "task": "GAME OVER",
+    "article": [
+        "One of your stats reached 0%."
+    ],
+    "action": "RESTART"
+}
