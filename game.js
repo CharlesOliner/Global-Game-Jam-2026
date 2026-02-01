@@ -9,6 +9,8 @@ const levels = [
     "refugees"
 ];
 
+let audio;
+
 let stats = {
     publicApproval: 50,
     governmentApproval: 50,
@@ -84,7 +86,14 @@ function displayArticle() {
     else {
         statsElement.style.display = "none";
         newspaperButtonElement.innerText = "Next";
-        newspaperButtonElement.onclick = next;
+        newspaperButtonElement.onclick = () => {
+            if (!audio) {
+                audio = new Audio('music.mp3');
+                audio.loop = true;
+                audio.play();
+            }
+            next();
+        };
     }
 }
 
