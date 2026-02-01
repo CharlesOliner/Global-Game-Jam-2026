@@ -41,8 +41,8 @@ async function next() {
         || stats.economy == 0
         || stats.health == 0
     ) 
-        ? "/game-over.json"
-        : `/${levels[levelIndex]}.json`;
+        ? "game-over.json"
+        : `${levels[levelIndex]}.json`;
 
     const response = await fetch(
       levelName,
@@ -104,7 +104,7 @@ function displayArticle() {
             statsElement.style.display = "";
             newspaperButtonElement.innerText = "Restart";
             newspaperButtonElement.onclick = () => {
-                navigation.navigate("/");
+                navigation.navigate("index");
             };
             break;
         default:

@@ -75,7 +75,7 @@
         }
     },
     "images": {
-        "response: execution": "/guillotine.png",
-        "response: trial": "/mugshot.png"
+        "response: execution": "guillotine.png",
+        "response: trial": "mugshot.png"
     }
 }

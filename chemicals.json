@@ -64,6 +64,6 @@
         }
     },
     "images": {
-        "contents: toxic-chemicals": "/radioactive-waste.png"
+        "contents: toxic-chemicals": "radioactive-waste.png"
     }
 }
