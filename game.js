@@ -88,6 +88,7 @@ function displayArticle() {
     switch (articleData.action) {
         case "NEXT":
             statsElement.style.display = "none";
+            newspaperButtonElement.style.display = "none";
             newspaperButtonElement.innerText = "Next";
             newspaperButtonElement.onclick = () => {
                 if (!audio) {
@@ -121,6 +122,7 @@ function rotate(choice, options) {
     index = (index + 1) % options.length;
     choice.dataset.index = index;
     updateChoice(choice, options);
+    newspaperButtonElement.style.display = "";
 }
 
 function updateChoice(choice, options) {

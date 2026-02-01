@@ -1,7 +1,7 @@
 {
     "task": "Government-assigned task: Get the petrochemical company off the hook.",
     "article": [
-        "A few days ago, several witnesses reported seeing the local petrochemical company dumping a liquid into (lake name). This lake is acts as a water supply for (town name).",
+        "A few days ago, several witnesses reported seeing the local petrochemical company dumping a liquid into (lake name). This lake acts as a water supply for (town name).",
         {
             "id": "identity",
             "type": "CHOICE",

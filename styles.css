@@ -43,6 +43,7 @@ img {
     font-family: serif;
     line-height: 24px;
     background-image: url("paper.png");
+    max-width: 1280px;
 }
 
 .paper.pink {
@@ -81,6 +82,7 @@ img {
     overflow-y: scroll;
     flex-grow: 1;
     text-align: left;
+    min-width: 50%;
 }
 
 .lie {
