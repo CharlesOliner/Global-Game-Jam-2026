@@ -72,7 +72,7 @@ function displayArticle() {
             const span =  document.createElement("span");
             span.innerText = entry;
             articleTextElement.appendChild(span);
-        } else {
+        } else if (entry.type === "CHOICE"){
             const choice = document.createElement("span");
             const options = Object.entries(entry.options);
             choice.id = entry.id;
@@ -80,6 +80,9 @@ function displayArticle() {
             updateChoice(choice, options);
             choice.onclick = () => rotate(choice, options);
             articleTextElement.appendChild(choice);
+        } else {
+            articleImageElement.src = entry.url;
+            articleImageElement.style.display = "";
         }
     }
 

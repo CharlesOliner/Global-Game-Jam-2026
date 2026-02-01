@@ -106,6 +106,10 @@ img {
   text-decoration-thickness: 2px;
 }
 
+#article-text {
+    flex-grow: 1;
+}
+
 button {
     background: red;
     overflow: hidden;

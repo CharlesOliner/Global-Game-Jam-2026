@@ -1,6 +1,10 @@
 {
-    "task": "GAME OVER",
+    "task": "You have been scheduled for immediate termination. There is no toleration for failure.",
     "article": [
+        {
+            "type": "IMAGE",
+            "url": "guillotine.png"
+        },
         "One of your stats reached 0%."
     ],
     "action": "RESTART"

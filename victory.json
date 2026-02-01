@@ -1,7 +1,16 @@
 {
-    "task": "VICTORY",
     "article": [
-        "You've reached the end of the game."
+        "Congratulations\n",
+        "This game was developed by Charles Oliner and Colin Barrion\n",
+        "This game was made for the 2026 Global Game Jam\n",
+        "\n",
+        "Acknowledgements:\n",
+        "GMU\n",
+        "(Thanks for hosting)\n",
+        "Nathan Hahn\n",
+        "Reuben\n",
+        "Norbert Barrion\n",
+        "Mae"
     ],
     "action": "RESTART"
 }
